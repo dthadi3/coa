@@ -9,6 +9,16 @@ matrix:
     - node_js: "8"
       env: COVERALLS=1
     - node_js: "9"
+#Added power jobs
+    - node_js: "4"
+      arch: ppc64le
+    - node_js: "6"
+      arch: ppc64le
+    - node_js: "8"
+      arch: ppc64le
+      env: COVERALLS=1
+    - node_js: "9"
+      arch: ppc64le
 
 after_success:
   - if [ "x$COVERALLS" = "x1" ]; then npm run coveralls; fi
